@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f8f9fa; /* Light background */
+        color: #212529; /* Darker text */
+      }
+      .navbar {
+        background: linear-gradient(to right, #4cbb17, #007bff); /* Gradient for luxury feel */
+      }
+      .nav-link {
+        transition: color 0.3s ease;
+      }
+      .nav-link:hover {
+        color: #ffc107; /* Gold color on hover */
+      }
+      .active {
+        background-color: #ffffff; /* Active background */
+        color: #007bff; /* Active text color */
+        padding: 5px 10px;
+        border-radius: 10px; /* Rounded corners for luxury feel */
+      }
+      button {
+        transition: transform 0.3s ease, background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        transform: scale(1.05); /* Slight scale effect */
+      }
+      section {
+        padding: 6rem 1rem; /* Increased padding for sections */
+      }
+      .container {
+        max-width: 1200px; /* Maximum width for container */
+      }
+    </style>
+  </head>
+  <body class="h-screen text-gray-800">
+    <!-- Navbar start -->
+    <nav class="py-4 px-7 fixed w-full top-0 z-50 navbar shadow-lg">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="text-3xl font-bold text-white">My Portfolio</div>
+        <button id="menu-toggle" class="block lg:hidden text-white">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul id="navbar" class="hidden lg:flex space-x-6 font-medium text-white">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About Me</a></li>
+          <li><a href="#certificate" class="nav-link">Certificate</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#project" class="nav-link">Project</a></li>
+          <li><a href="#contacts" class="nav-link">Contacts</a></li>
+        </ul>
+        <div class="hidden lg:block">
+          <a href="https://drive.google.com/file/d/1cZW3OFocx2doynQBnB7-sTdGl92k5ZEQ/view?usp=drive_link">
+            <button class="border p-3 rounded-lg bg-green-700 text-white font-semibold shadow-lg hover:bg-green-800">Download CV</button>
+          </a>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <ul id="mobile-menu" class="hidden bg-green-700 text-white space-y-2 p-4 lg:hidden font-medium">
+        <li><a href="#home" class="nav-link block hover:text-green-700">Home</a></li>
+        <li><a href="#about" class="nav-link block hover:text-green-700">About Me</a></li>
+        <li><a href="#certificate" class="nav-link block hover:text-green-700">Certificate</a></li>
+        <li><a href="#skills" class="nav-link block hover:text-green-700">Skills</a></li>
+        <li><a href="#project" class="nav-link block hover:text-green-700">Project</a></li>
+        <li><a href="#contacts" class="nav-link block hover:text-green-700">Contacts</a></li>
+      </ul>
+    </nav>
+    <!-- Navbar end -->
+
+    <main class="px-1 lg:px-10">
+      <!-- Home Section -->
+      <section id="home" class="mx-auto py-10 lg:py-20 px-4 mt-16 bg-white rounded-lg shadow-lg">
+        <div class="lg:flex lg:flex-row-reverse lg:justify-center lg:items-center md:block">
+          <div class="lg:w-2/5 flex justify-center mb-4 md:mb-8" data-aos="fade-left" data-aos-duration="2000">
+            <img src="img/Profile riski.jpg" alt="Profile Image" class="object-cover rounded-full border-4 border-green-700 w-96 shadow-lg" />
+          </div>
+          <div class="lg:w-3/5" data-aos="fade-right" data-aos-duration="2000">
+            <h3 class="text-2xl lg:text-4xl font-semibold">Hello I'm</h3>
+            <h1 class="text-3xl lg:text-5xl font-bold text-green-700">Riski Pratama</h1>
+            <h3 class="text-xl lg:text-3xl font-semibold">And I'm <span class="text-green-700" id="text"></span></h3>
+            <p class="text-base lg:text-lg mt-4 leading-relaxed">
+              Active final year Bachelor of Science - BS Computer Science student at Universitas Dinamika Bangsa in 2021 and MBKM student of the MSiB program batch 6 IBM Academy Independent Study: Advance AI x batch 7 IBM Academy: Hybrid Cloud & Red Hat at PT Kinema Systrans Multimedia (Infinite Learning Indonesia).
+            </p>
+            <div class="flex w-44 py-4 justify-between">
+              <a href="https://www.linkedin.com/in/riski-pratama-686104253" class="flex items-center justify-center w-10 h-10 rounded-full border border-gray-300 hover:border-green-700 hover:text-green-700 transition-colors duration-300 ease-in-out shadow-lg hover:shadow-green-500/50">
+                <i class="fab fa-linkedin fa-xl"></i>
+              </a>
+              <a href="https://www.instagram.com/riskipratama.10" class="flex items-center justify-center w-10 h-10 rounded-full border border-gray-300 hover:border-green-700 hover:text-green-700 transition-colors duration-300 ease-in-out shadow-lg hover:shadow-green-500/50">
+                <i class="fab fa-instagram fa-xl"></i>
+              </a>
+              <a href="https://github.com/rclayskuy10" class="flex items-center justify-center w-10 h-10 rounded-full border border-gray-300 hover:border-green-700 hover:text-green-700 transition-colors duration-300 ease-in-out shadow-lg hover:shadow-green-500/50">
+                <i class="fab fa-github fa-xl"></i>
+              </a>
+              <a href="https://www.youtube.com/@rclayskuy" class="flex items-center justify-center w-10 h-10 rounded-full border border-gray-300 hover:border-green-700 hover:text-green-700 transition-colors duration-300 ease-in-out shadow-lg hover:shadow-green-500/50">
+                <i class="fab fa-youtube fa-xl"></i>
+              </a>
+            </div>            
+          </div>                      
+          <a href="https://drive.google.com/file/d/1cZW3OFocx2doynQBnB7-sTdGl92k5ZEQ/view?usp=drive_link">
+            <button class="border p-3 rounded-lg bg-green-700 text-white block lg:hidden shadow-lg hover:bg-green-800 transition duration-300 ease-in-out">Download CV</button>
+          </a>
+        </div>
+      </section>
+    
+      <!-- About Me Section -->
+      <section id="about" class="py-10 lg:py-20 px-4 bg-white rounded-lg shadow-lg">
+        <div class="lg:flex lg:justify-center lg:items-center md:block">
+          <div class="w-2/5 lg:block hidden" data-aos="fade-right" data-aos-duration="2000">
+            <img src="img/Profile riski.jpg" alt="" class="object-cover rounded-full border-4 border-green-700 w-96 shadow-lg" />
+          </div>
+          <div class="w-full lg:w-3/5" data-aos="fade-left" data-aos-duration="2000">
+            <h2 class="text-3xl font-bold mb-4 text-center lg:text-left text-green-700">About <span class="text-green-700">Me</span></h2>
+            <h3 class="text-xl lg:text-3xl font-semibold">Computer Science | IT Support | Junior Sysadmin | AI Enthusiast | Cyber Security Enthusiast | Data Science Enthusiast | Robotics Enthusiast</h3>
+            <p class="text-base lg:text-lg mt-2 leading-relaxed">
+              Sufficient experience in the field of information technology (IT), mastery of several programming languages ​​such as Python and C++, and an in-depth understanding of basic IT concepts. With strong problem-solving abilities and a great desire to continue learning, ready to face challenges in various fields such as Machine Learning, Artificial Intelligence (AI), Cyber ​​Security, Data Science, IT Support, Robotics, and other technologies. I live in Jambi City, Muaro Jambi Regency.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- About Me Section end -->
+
+      <!-- Certificate Section -->
+<section id="certificate" class="py-10 lg:py-16 bg-gradient-to-r from-gray-100 to-gray-200">
+  <div class="mx-auto lg:p-8 max-w-7xl">
+    <h2 class="text-4xl text-center font-bold text-gray-800 mb-8">My <span class="text-green-700">Certificates</span></h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-7 lg:px-0" data-aos="fade-up" data-aos-duration="2000">
+      <!-- Sertifikat 1 -->
+      <a href="https://drive.google.com/file/d/1ciUn2SMlNRTiuDwnUFyhrIfYClcNEhCY/view?usp=sharing" target="_blank" class="shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+        <img src="img/sertif1.png" alt="Certificate 1" class="w-full rounded-lg border-2 border-gray-300" />
+      </a>
+      <!-- Sertifikat 2 -->
+      <a href="https://digitalent.kominfo.go.id/cek-sertifikat?registrasi=1957832840-1991" target="_blank" class="shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+        <img src="img/sertif2.png" alt="Certificate 2" class="w-full rounded-lg border-2 border-gray-300" />
+      </a>
+      <!-- Sertifikat 3 -->
+      <a href="https://drive.google.com/file/d/1ckTQdawCYdk4rDArrZtA02rQYI92zU-_/view?usp=sharing" target="_blank" class="shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+        <img src="img/sertif3.png" alt="Certificate 3" class="w-full rounded-lg border-2 border-gray-300" />
+      </a>
+      <!-- Sertifikat 4 -->
+      <a href="https://www.credly.com/badges/f8a2b49e-3277-46b0-b42f-1c0fb96e4a57/linked_in_profile" target="_blank" class="shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+        <img src="img/sertif4.png" alt="Certificate 4" class="w-full rounded-lg border-2 border-gray-300" />
+      </a>
+      <!-- Sertifikat 5 -->
+      <a href="https://www.credly.com/earner/earned/badge/b5285939-0afc-4b76-88d9-43b12434ce14" target="_blank" class="shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+        <img src="img/sertif5.png" alt="Certificate 5" class="w-full rounded-lg border-2 border-gray-300" />
+      </a>
+      <!-- Sertifikat 6 -->
+      <a href="https://www.credly.com/earner/earned/badge/3e1542c4-8cb2-40b6-a3b1-78045206de25" target="_blank" class="shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+        <img src="img/sertif6.png" alt="Certificate 6" class="w-full rounded-lg border-2 border-gray-300" />
+      </a>
+    </div>
+  </div>
+</section>
+<!-- Certificate Section end -->
+<!-- Skills Section -->
+<section id="skills" class="mx-auto p-10 bg-gradient-to-b from-gray-50 to-gray-100">
+  <h2 class="text-4xl text-center font-extrabold text-gray-800 mb-8">My <span class="text-green-700">Skills</span></h2>
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 px-4 lg:px-0" data-aos="fade-up" data-aos-duration="2000">
+    <div class="flex justify-center">
+      <img src="https://tse3.mm.bing.net/th?id=OIP.laYIzRY2A-jpnBA2rO2jSQAAAA&pid=Api&P=0&h=180" alt="Google Colab" class="w-full max-w-[120px] rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-110" />
+    </div>
+    <div class="flex justify-center">
+      <img src="https://logodix.com/logo/92148.png" alt="IBM Cloud" class="w-full max-w-[120px] rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-110" />
+    </div>
+    <div class="flex justify-center">
+      <img src="https://1000logos.net/wp-content/uploads/2021/04/Red-Hat-logo.png" alt="Red Hat" class="w-full max-w-[120px] rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-110" />
+    </div>
+    <div class="flex justify-center">
+      <img src="https://seeklogo.com/images/A/arduino-ide-logo-8C562047FD-seeklogo.com.png" alt="Arduino IDE" class="w-full max-w-[120px] rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-110" />
+    </div>
+    <div class="flex justify-center">
+      <img src="https://logodix.com/logo/719944.png" alt="Visual Studio Code" class="w-full max-w-[120px] rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-110" />
+    </div>
+    <div class="flex justify-center">
+      <img src="https://logowik.com/content/uploads/images/tensorflow-new1255.jpg" alt="TensorFlow" class="w-full max-w-[120px] rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-110" />
+    </div>
+    <div class="flex justify-center">
+      <img src="https://freelogopng.com/images/all_img/1656733637logo-canva-png.png" alt="Canva" class="w-full max-w-[120px] rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-110" />
+    </div>
+    <div class="flex justify-center">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" class="w-full max-w-[120px] rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-110" />
+    </div>
+    <div class="flex justify-center">
+      <img src="https://www.pngitem.com/pimgs/m/403-4039114_c-logo-svg-hd-png-download.png" alt="C++" class="w-full max-w-[120px] rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-110" />
+    </div>
+    <div class="flex justify-center">
+      <img src="https://logodownload.org/wp-content/uploads/2016/10/html5-logo-2.png" alt="HTML5" class="w-full max-w-[120px] rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-110" />
+    </div>
+    <div class="flex justify-center">
+      <img src="https://logodownload.org/wp-content/uploads/2017/04/css-3-logo.png" alt="CSS3" class="w-full max-w-[120px] rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-110" />
+    </div>
+    <div class="flex justify-center">
+      <img src="https://i.pinimg.com/originals/98/0b/a0/980ba07956ccfdf81b5060b1795cdcad.png" alt="JavaScript" class="w-full max-w-[120px] rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-110" />
+    </div>
+  </div>
+</section>
+<!-- Skills Section end -->
+
+      <!-- Projects Section -->
+      <section id="project" class="py-8">
+        <div class="mx-auto p-8">
+            <h2 class="text-3xl text-center font-bold mb-6">Project</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-aos="fade-up" data-aos-duration="2000">
+                <!-- Project Card 1 -->
+                <div class="bg-white shadow-md rounded-md overflow-hidden border border-green-700">
+                    <img src="img/Reliji Trash Care.png" alt="Project Image" class="w-full h-44 object-cover object-center p-2" />
+                    <div class="p-4 bg-green-700 text-white">
+                        <h3 class="text-xl font-semibold mb-2">Project Webiste Reliji Trash Care</h3>
+                        <p class="mb-4">This is my Capstone Project assignment with the title Reliji Trash Care Website in independent study batch 6 IBM Academy: Advance AI Infinite Learning Indonesia which aims to improve skills in the field of creating AI models and teamwork through Design Thinking, Deep Learning with CNN models, and Reports End of Project</p>
+                        <a href="https://github.com/Reliji-Trash-Care" class="bg-white text-green-700 py-2 px-4 rounded-md font-semibold">Read More</a>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="bg-white shadow-md rounded-md overflow-hidden border border-green-700">
+                    <img src="img/IOT.jpg" alt="Project Image" class="w-full h-44 object-cover object-center p-2" />
+                    <div class="p-4 bg-green-700 text-white">
+                        <h3 class="text-xl font-semibold mb-2">Project IOT ( Smart home ) menggunakan Nodemcu dan Blynk dengan 2 Relay module</h3>
+                        <p class="mb-4">This project involves creating a smart home system using the NodeMCU microcontroller, the Blynk app, and two relay modules. The primary goal is to control home appliances remotely via a mobile application, enhancing convenience and automation.</p>
+                        <a href="https://youtu.be/Pm9_Bd3NkcI?si=e-_QJl3W6u6COhEV" class="bg-white text-green-700 py-2 px-4 rounded-md font-semibold">Read More</a>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="bg-white shadow-md rounded-md overflow-hidden border border-green-700">
+                    <img src="img/claybot.png" alt="Project Image" class="w-full h-44 object-cover object-center p-2" />
+                    <div class="p-4 bg-green-700 text-white">
+                        <h3 class="text-xl font-semibold mb-2">Project Clay bot (Worker and moving robot)</h3>
+                        <p class="mb-4">Clay Bot is a robotic system designed to assist or replace human tasks in handling potentially hazardous items, such as explosives or other dangerous materials. Its primary function is to enhance safety by minimizing human exposure to risks during the transportation and management of these items. This innovative solution emphasizes efficiency while prioritizing human safety in challenging environments.</p>
+                        <a href="https://youtu.be/84uet8Sl5IA?si=Bjo6PhQx0aHcE3ip" class="bg-white text-green-700 py-2 px-4 rounded-md font-semibold">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+      <!-- Projects Section end -->
+
+<!-- Contact Section -->
+<section id="contact" class="py-4 lg:py-8 px-8">
+  <h2 class="text-3xl font-bold text-center">Contact <span class="text-green-700">Me</span></h2>
+  <form id="contact-form" class="mt-8 max-w-xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <input type="text" id="name" placeholder="Your Name" class="border rounded-lg p-2" />
+      <input type="email" id="email" placeholder="Your Email" class="border rounded-lg p-2" />
+    </div>
+    <textarea id="message" rows="4" placeholder="Your Message" class="border rounded-lg p-2 w-full mt-4"></textarea>
+    <a href="#" id="whatsapp-link" class="bg-green-700 text-white px-4 py-2 rounded-lg mt-4">Send Message via WhatsApp</a>
+  </form>
+</section>
+<!-- Contacts Section end -->
+
+<script>
+  document.getElementById('whatsapp-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Mencegah link default
+    const name = encodeURIComponent(document.getElementById('name').value);
+    const email = encodeURIComponent(document.getElementById('email').value);
+    const message = encodeURIComponent(document.getElementById('message').value);
+    
+    // Tautan WhatsApp
+    const waLink = `https://wa.me/qr/TUBJG33LTU2IP1?text=Name:%20${name}%0AEmail:%20${email}%0AMessage:%20${message}`;
+    
+    // Mengarahkan ke WhatsApp
+    window.open(waLink, '_blank');
+  });
+</script>
+
+    </main>
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-green-700 to-blue-700 text-white py-4 text-center">
+      <p class="mb-0">&copy; 2024 <strong>Riski Pratama Portfolio</strong>. All rights reserved.</p>
+  </footer>  
+
+    <script src="main.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
